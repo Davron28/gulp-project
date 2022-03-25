@@ -1,0 +1,89 @@
+$R: "Roboto";
+$M: "Montserrat";
+$C: "Comfortaa";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    &::before, &::after {
+        font-family: 'Font Awesome';
+    }
+}
+
+body {
+    background: $blue;
+    font-family: $M;
+    font-weight: 400;
+}
+
+.icon {
+    &__film::before {
+        content: '\f3a0';
+        font-weight: 300;
+        font-size: 45px;
+        color: $white;
+    }
+    &__play {
+        font-size: 45px;
+        color: $white;
+        display: flex;
+        &::before {
+            content: '\f04b';
+            font-weight: 900;
+            position: absolute;
+        }
+        &::after {
+            content: '\10f04b';
+            font-weight: 900;
+            opacity: 0.5;
+        }
+    }
+}
+
+.btn {
+    color: $white;
+    background: $blue;
+    font-size: 16px;
+    line-height: 12px;
+    font-family: $R;
+    font-weight: 500;
+    max-width: 166px;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 300ms, color 300ms;
+    border-radius: 4px;
+    &:hover {
+        background: $orange;
+        color: $blue;
+    }
+}
+
+.main__title {
+    font-size: 36px;
+    line-height: 40px;
+    font-family: $C;
+    font-weight: 400;
+    color: $orange;
+    text-transform: capitalize;
+    overflow: hidden;
+    width: max-content;
+    &::after {
+        transition: transform 500ms;
+        content: '';
+        display: block;
+        background: $orange;
+        height: 2px;
+        width: 100%;
+        margin-top: 10px;
+        transform: translateX(-100%);
+    }
+    &:hover::after {
+        transform: translateX(0);
+    }
+}

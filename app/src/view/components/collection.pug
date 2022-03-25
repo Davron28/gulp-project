@@ -1,0 +1,11 @@
+-var collection = [{num: 1, title: "All Marvel Films"},{num: 2, title: "Fast and the Furious"},{num: 3, title: "Star Wars"}]
+
+section.collection 
+    .container 
+        h2.collection__title.main__title Collections
+        .collection__block 
+            -for(var k = 0; k < collection.length; k++)
+                .collection__item
+                    img(src="images/collection__" + collection[k].num + ".webp", alt="").collection__item-img
+                    span.icon__play 
+                    h2.collection__item-title= collection[k].title
